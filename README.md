@@ -7,7 +7,10 @@ Aqui utilizo o projeto como laboratório para aprofundar conhecimentos e aplicar
 > O projeto original enviado para avaliação permanece inalterado.  
 > Este repositório é uma evolução posterior com **fins de estudo e aperfeiçoamento técnico.**
 
+# links
+[rotas](https://udgwebdev.github.io/node-js-para-leigos-trabalhando-com-http/)
 
+> guia introdutório sobre o módulo http nativo do node 
 ---
 
 # Roadmap de Evolução Técnica

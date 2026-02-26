@@ -1,5 +1,5 @@
 import { config } from './config/config.js';
-import express, { json } from 'express';
+// import express, { json } from 'express';
 import cors from 'cors';
 import authRoutes from './routes/auth.route.js';
 import templateRoutes from './routes/templates.route.js';
@@ -10,11 +10,11 @@ import { AuthenticatedRequest, authMiddleware } from './middleware/authMiddlewar
 export const app = express();
 
 const corsOptions = {
-  origin: config.CORS_ORIGIN,
-  optionsSuccessStatus: 200
+    origin: config.CORS_ORIGIN,
+    optionsSuccessStatus: 200
 };
 
-app.use(cors(corsOptions)); 
+app.use(cors(corsOptions));
 app.use(json());
 
 
@@ -31,7 +31,10 @@ app.get("/api/auth/me", authMiddleware, (req: AuthenticatedRequest, res) => {
     return res.status(200).json({ message: "User authenticated", user: req.user });
 })
 
-
+// const server = http.createServer((req, res) => {
+// const headers = new Headers({'Content-Type':'text/html'});
+// res.setHeader()
+// })
 
 
 app.listen(config.port, () => {

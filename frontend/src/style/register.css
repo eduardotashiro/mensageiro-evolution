@@ -1,0 +1,126 @@
+*{
+    box-sizing: border-box; /* Faz com que padding e border não aumentem o tamanho total dos elementos */
+    margin: 0;   /* Remove todas as margens padrão dos elementos */
+    padding: 0; /* Remove todos os espaçamentos internos padrão */
+    font-family:'Poppins', sans-serif;
+
+}
+
+
+body{
+    background-image: url("../assets/bg-leve.jpg"); /* Define a imagem de fundo */
+    background-repeat:no-repeat;  /* Impede que a imagem se repita */
+    background-attachment:fixed; /* Faz a imagem de fundo ficar fixa ao dar um scroll */
+    background-position: center center; /* Centraliza a imagem (horizontal e verticalmente) */
+    background-size: cover;  /* Faz a imagem cobrir toda a tela */
+   
+    margin: 0;   /* Remove espaço externo do body */
+    padding: 0;    /* Remove espaço interno do body */
+    height: 100vh; /* Garante altura total da tela, altura da viewport*/
+
+
+    width: 100%;  /* Largura total da tela */
+    min-height: 100vh;  /* Garante que tenha pelo menos 100% da altura da viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: #fafafa; /* Cor de fundo clara para o formulário */
+    border-radius:10px; /* Arredonda os cantos da caixa */
+    margin:10px;  /* Espaçamento externo */
+    max-width: 550px; /* Largura máxima */
+    width: 90%;   /* Ocupa 90% da largura disponível */
+    overflow: hidden;  /* Esconde qualquer conteúdo que ultrapasse a borda */
+}
+
+.header{
+    background:linear-gradient(119deg, #3acbf0 20%, #fb2bf5 100%); /* Fundo com gradiente colorido */
+    padding: 20px;   /* Espaçamento interno */
+    text-align: center; /* Alinha o texto ao centro */
+    color: white;  /* Cor do texto branca */
+}
+
+.form{
+    padding: 20px; /* Espaçamento interno do formulário */
+    
+}
+
+.form-content {
+    margin-bottom: 14px; /* Espaçamento inferior entre campos */
+    padding-bottom: 10px; /* Espaço extra dentro da caixa */
+    position: relative; /* Necessário para posicionar elementos filhos com position:absolute */
+    display: block;   /* Garante que fique em bloco (linha inteira) */
+}
+
+.form-content label{
+    display: inline-block;   /* Permite aplicar margem em elementos inline */
+    margin-bottom: 4px; /* Espaço abaixo do rótulo */
+} 
+
+.form-content input{
+    display:block; /* Coloca cada campo em uma linha nova */
+    width: 100%;  /* Ocupa toda a largura disponível */
+    border-radius: 7px; /* Bordas arredondadas */
+    padding: 4px; /* Espaçamento interno no campo */
+    border: 2px solid #c0c0c0 ; /* Borda cinza clara */
+}
+
+.form-content a{
+position: absolute; /* Posiciona em relação ao .form-content (que tem position: relative) */
+bottom: -21px;  /* Move o link para abaixo do campo */
+visibility: hidden; /* Esconde o link (mensagem de erro), só aparece com JavaScript */
+}
+
+.form button{
+    background:linear-gradient(119deg, #3acbf0 20%, #fb2bf5 100%); /* Gradiente no botão */
+    color: white;    /* Cor do texto do botão */
+    border-radius: 10px;  /* Bordas arredondadas */
+    padding: 10px;   /* Espaço interno do botão */
+    border: 0;  /* Remove a borda padrão */
+    font-size: 18px; /* Tamanho do texto */
+    cursor: pointer; /* Mostra o ponteiro de clique ao passar o mouse */
+
+    
+
+}
+
+.form-content.error input{
+    border-color: red; /* Muda a borda do campo para vermelho quando há erro */
+}
+
+.form-content.error a {
+    color: red;  /* Muda a cor da mensagem para vermelho */
+    /* Pode ser ativado com JS trocando visibility: hidden por visible */
+    visibility: visible ;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.mensageiro_title{
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 38px;
+
+    background: linear-gradient(119deg, #3acbf0 20%, #fb2bf5 100%);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.buttons{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+}
+.buttons .btn{
+    width: 50%;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Acesso</title>
+    <link rel="stylesheet" href="../style/register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="mensageiro_title">
+        <h1>Mensageiro</h1>
+    </div>
+
+    <div class="container">
+        <section class="header">
+            <h2>Nova conta</h2>
+        </section>
+
+
+        <form id="form" class="form">
+            <!-- Início do formulário. Possui um ID (usado no JS) e uma classe (usada no CSS) -->
+
+            <div class="form-content"> <!-- Bloco de conteúdo do formulário (campo Nome do usuário) -->
+                <label for="username">Nome do usuário</label> <!-- Rótulo associado ao input com id="username" -->
+                <input type="text" id="username" placeholder="Digite o nome do usuario...">
+                <!-- Texto de dica dentro do campo -->
+                <a>aqui vai a mensagem de erro</a> <!-- Espaço reservado para mensagens de erro -->
+            </div>
+
+            <br><br>
+
+            <div class="form-content">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Digite o seu email...">
+                <a>aqui vai a mensagem de erro </a>
+            </div>
+
+            <br><br>
+
+
+            <div class="form-content">
+                <label for="password">Senha</label>
+                <input type="password" id="password" placeholder="Digite sua senha...">
+                <a>aqui vai a mensagem de erro </a>
+            </div>
+
+            <br><br>
+
+
+            <div class="form-content">
+                <label for="password-confirmation">Confirme sua senha</label>
+                <input type="password" id="password-confirmation" placeholder="Digite sua senha novamente">
+                <a>aqui vai a mensagem de erro </a>
+            </div>
+
+            <br><br><br>
+            <div class="buttons">
+                <button type="submit" class="btn">Cadastre-se</button> <!-- Botão que envia o formulário -->
+                <button type="button" class="btn" onclick="window.location.href='login.html'">Login</button>
+            </div>
+        </form> <!-- Fim do formulário -->
+
+    </div> <!-- Fim do contêiner principal -->
+
+
+
+    <script src="../scripts/register.js"> </script> <!-- Importa o arquivo JavaScript externo -->
+</body>
+
+</html>

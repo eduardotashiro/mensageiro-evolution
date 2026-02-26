@@ -1,0 +1,40 @@
+{
+  "name": "mensageiro",
+  "version": "1.0.0",
+  "description": "amazing project for the mensageiro challenge fs",
+  "homepage": "https://github.com/eduardotashiro/mensageiro-challenge-fs#readme",
+  "bugs": {
+    "url": "https://github.com/eduardotashiro/mensageiro-challenge-fs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardotashiro/mensageiro-challenge-fs.git"
+  },
+  "license": "ISC",
+  "author": "Eduardo Tashiro",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "npx tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "prisma": "^5.22.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.3.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

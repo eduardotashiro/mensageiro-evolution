@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensageiro</title>
+    <link rel="stylesheet" href="../style/mensageiro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h1>📨 Mensageiro</h1>
+        <div class="navbar-right">
+            <span id="user-name"></span>
+            <button class="btn-logout" onclick="logout()">Sair</button>
+        </div>
+    </nav>
+
+    <!-- LAYOUT PRINCIPAL -->
+    <div class="main">
+
+        <!-- SIDEBAR: LISTA DE TEMPLATES -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Templates</h2>
+                <button class="btn-new" onclick="openModal()">+ Novo</button>
+            </div>
+            <div class="template-list" id="template-list"></div>
+        </aside>
+
+        <!-- ÁREA PRINCIPAL: ENVIAR EMAIL -->
+        <main class="content">
+            <div class="send-form">
+                <h2 class="section-title">Enviar Email</h2>
+
+                <div class="form-group">
+                    <label>Template selecionado</label>
+                    <input type="text" id="selected-template" placeholder="Clique em um template na sidebar..." readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Destinatários</label>
+                    <select id="user-select" onchange="addRecipient()">
+                        <option value="">Selecione um usuário...</option>
+                    </select>
+                    <div class="recipients-list" id="recipients-list"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Prévia do email</label>
+                    <div class="preview-box" id="preview-box"></div>
+                </div>
+
+                <div class="success-msg" id="success-msg">✅ Email enviado com sucesso!</div>
+
+                <button class="btn-send" onclick="sendEmail()">Enviar Email</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL: CRIAR / EDITAR TEMPLATE -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <h2>Novo Template</h2>
+            <input type="text" id="modal-title" placeholder="Título ex: Aviso de incidente">
+            <input type="text" id="modal-subject" placeholder="Assunto do email">
+            <textarea id="modal-body" placeholder="Descrição do email "></textarea>
+            <span class="modal-hint">Use {{remetente}} para o seu nome e {{destinatário}} para o nome de quem recebe</span>
+            <div class="modal-buttons">
+                <button class="btn-cancel" onclick="closeModal()">Cancelar</button>
+                <button class="btn-confirm" id="modal-confirm-btn" onclick="createTemplate()">Criar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/mensageiro.js"></script>
+</body>
+</html>

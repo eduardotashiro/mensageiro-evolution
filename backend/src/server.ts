@@ -1,48 +1,66 @@
-import http, { IncomingMessage, ServerResponse } from "http"
+import http, { IncomingMessage, METHODS, ServerResponse } from "http"
 import { config } from './config/config.js';
-// import cors from 'cors';
+import cors from 'cors';
+import templateRoutes from './routes/templates.route.js';
+import userRoutes from './routes/users.route.js';
+import emailRoutes from './routes/email.route.js';
+import { AuthenticatedRequest, authMiddleware } from './middleware/authMiddleware.js';
 
 const host = config.host
 const port = Number(config.port)
-console.log("PORT:", config.port)
-console.log("HOST:", config.host)
+// // console.log("PORT:", config.port)
+// // console.log("HOST:", config.host)
+// const corsOptions = {
+//     origin: config.CORS_ORIGIN,
+//     optionsSuccessStatus: 200
+// };
 
-const requestListenerTest = function (_req: IncomingMessage, res:ServerResponse) {
-    const data = {
-        message: "this is a JSON response",
-        timeStamp: Date.now(),
-        note: 'he said "hello"' // Quotes automatically escaped
-    }
-    res.setHeader("Content-Type", "application/json");
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "POST");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+// const requestListenerTest = ((req: IncomingMessage, res:ServerResponse) => {
+//     const {method,url} = req
+//     // const parseUrl = new URL(req.url!,`http://${req.headers.host}`)
+
+//     res.setHeader("Content-Type", "application/json");
+//     res.setHeader("Access-Control-Allow-Origin", `${corsOptions}`);
+//     res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+//     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+//     if (method === "OPTIONS") {
+//         res.writeHead(204);
+//         res.end(userRoutes)
+//         return
+//     }
+
+//     if (method === "GET" && url === "/api/auth") {
+//         res.writeHead(200,{"content-type":"application/json"})
+//         res.end()
+//         return
+//     }
+ 
+// })
+
+const server = http.createServer((req,res)=>{
+    router(req,res)
     res.writeHead(200);
-    res.end(JSON.stringify(data))
-}
-
-const server = http.createServer(requestListenerTest)
+    res.end()
+})
 
 server.listen(port, host,() => {
-    console.log(`Server is listening on http://${host}:${port}`)
+    try {
+        console.log(`Server is listening on http://${host}:${port}`)
+    } catch (error) {
+        process.exit(1)
+    }
 })
 
 
 // import authRoutes from './routes/auth.route.js';
 // // import express, { json } from 'express';
 // import http from "http"
-// import templateRoutes from './routes/templates.route.js';
-// import userRoutes from './routes/users.route.js';
-// import emailRoutes from './routes/email.route.js';
-// import { AuthenticatedRequest, authMiddleware } from './middleware/authMiddleware.js';
 
 
 // export const app = express();
 
-// const corsOptions = {
-//     origin: config.CORS_ORIGIN,
-//     optionsSuccessStatus: 200
-// };
+
 
 // app.use(cors(corsOptions));
 // app.use(json());

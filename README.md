@@ -10,7 +10,7 @@ Aqui utilizo o projeto como laboratório para aprofundar conhecimentos e aplicar
 # links
 [rotas](https://udgwebdev.github.io/node-js-para-leigos-trabalhando-com-http/)
 
-> guia introdutório sobre o módulo http nativo do node 
+[esse é bom !](https://www.digitalocean.com/community/tutorials/how-to-create-a-web-server-in-node-js-with-the-http-module)
 ---
 
 # Roadmap de Evolução Técnica

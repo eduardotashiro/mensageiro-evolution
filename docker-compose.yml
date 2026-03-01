@@ -18,8 +18,8 @@ services:
       - "3000:3000"
     environment:
       - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@postgres:5432/${DB_NAME}?schema=public
-      - JWT_SECRET=sua_chave_secreta_aqui
-      - CORS_ORIGIN=http://localhost:8080
+      - JWT_SECRET=${JWT_SECRET}
+      - CORS_ORIGIN=${CORS_ORIGIN}
     depends_on:
       - postgres
 
